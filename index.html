@@ -216,7 +216,7 @@ Continuar ❤️
 
 <div class="seccion" id="pantalla3">
 
-<img src="mayly.jpg" class="foto">
+<img src="mayly.jpg.jpeg" class="foto">
 
 <h1>Mayly ❤️</h1>
 
@@ -281,13 +281,38 @@ document.getElementById("pantalla3").classList.add("activa");
 
 const botonNo = document.getElementById("no");
 
+const frases = [
+"No 😅",
+"¿Estás segura? 🥺",
+"Ayy mi corazoncito 💔",
+"¿Pero estás segura? ",
+"Piensa bien ❤️",
+"Yo te invitaría un helado 🍦",
+"Batman estaría triste 🦇",
+"Me romperás el corazón 💔",
+"El dios bills no aguantara",
+"¿Esta segura?"
+];
+
+let indice = 0;
+
 botonNo.addEventListener("mouseover",()=>{
 
-const x=Math.random()*(window.innerWidth-150);
+const x=Math.random()*(window.innerWidth-180);
 const y=Math.random()*(window.innerHeight-100);
 
 botonNo.style.left=x+"px";
 botonNo.style.top=y+"px";
+
+indice++;
+
+if(indice >= frases.length){
+indice = 0;
+}
+
+botonNo.innerHTML = frases[indice];
+
+});
 
 });
 
