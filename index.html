@@ -1,395 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mayly ❤️</title>
 
-<title>Para Mayly ❤️</title>
+    <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-overflow:hidden;
-height:100vh;
-}
-
-.pantalla{
-position:absolute;
-width:100%;
-height:100%;
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-padding:20px;
-}
-
-.activa{
-display:flex;
-}
-
-h1{
-font-family:'Dancing Script',cursive;
-font-size:4rem;
-color:white;
-margin-bottom:15px;
-}
-
-h2{
-color:white;
-margin-bottom:20px;
-}
-
-.boton{
-padding:15px 35px;
-border:none;
-border-radius:40px;
-cursor:pointer;
-font-size:18px;
-font-weight:bold;
-}
-
-.rosa{
-background:#ff4d8d;
-color:white;
-}
-
-.carta{
-background:white;
-max-width:800px;
-padding:40px;
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.25);
-}
-
-.carta h3{
-font-size:3rem;
-color:#ff4d8d;
-font-family:'Dancing Script',cursive;
-margin-bottom:20px;
-}
-
-.carta p{
-font-size:18px;
-line-height:1.8;
-color:#444;
-}
-
-.foto{
-width:300px;
-height:300px;
-border-radius:50%;
-object-fit:cover;
-border:8px solid white;
-box-shadow:0 0 30px rgba(255,255,255,.8);
-margin-bottom:20px;
-}
-
-#si{
-background:#ff4d8d;
-color:white;
-border:none;
-padding:15px 35px;
-border-radius:40px;
-font-size:18px;
-cursor:pointer;
-margin-right:15px;
-}
-
-#no{
-background:#666;
-color:white;
-border:none;
-padding:15px 35px;
-border-radius:40px;
-font-size:18px;
-cursor:pointer;
-position:absolute;
-}
-
-.final{
-font-size:2rem;
-color:white;
-font-weight:bold;
-line-height:1.8;
-}
-
-.corazon{
-position:absolute;
-font-size:25px;
-pointer-events:none;
-animation:subir linear forwards;
-}
-
-@keyframes subir{
-
-0%{
-transform:translateY(100vh);
-opacity:1;
-}
-
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-
-}
-
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- INICIO -->
+<div class="hearts"></div>
 
-<div class="pantalla activa" id="inicio">
+<!-- PAGINA 1 -->
 
-<h1>Hola Mayly ❤️</h1>
+<section id="page1" class="page active">
 
-<h2>Tengo algo muy importante que decirte...</h2>
+    <h1>Hola Mayly ❤️</h1>
 
-<button class="boton rosa" onclick="abrirCarta()">
-Abrir carta 💌
-</button>
+    <p class="subtitle">
+        Tengo algo muy importante que decirte...
+    </p>
 
-</div>
+    <button onclick="showPage(2)" class="btn">
+        Abrir carta 💌
+    </button>
 
-<!-- CARTA -->
+</section>
 
-<div class="pantalla" id="carta">
+<!-- PAGINA 2 -->
 
-<div class="carta">
+<section id="page2" class="page">
 
-<h3>Querida Mayly ❤️</h3>
+    <div class="card">
 
-<p>
+        <h2>Querida Mayly ❤️</h2>
 
-Desde que te conocí, cada conversación contigo,
-cada sonrisa y cada momento compartido
-han significado mucho para mí.
-Y si me preguntas que; ¿Sabes a donde te estas metiendo?
-Te dire que si se a donde quiero llegar.
+        <p>
 
-<br><br>
+            Desde que te conocí, cada conversación contigo ha significado algo especial para mí.
 
-Me haces sentir feliz,
-me haces reír
-y haces que mis días sean mejores.
+            <br><br>
 
-<br><br>
+            Me haces sonreír incluso en los días difíciles.
 
-Por eso hoy quiero preguntarte algo
-que nace desde mi corazoncito...
+            <br><br>
 
-</p>
+            Gracias por ser tú.
 
-<br>
+            <br><br>
 
-<button class="boton rosa" onclick="mostrarPregunta()">
-Continuar ❤️
-</button>
+            Por eso hoy quiero preguntarte algo que nace desde el corazón...
 
-</div>
+        </p>
 
-</div>
+        <button onclick="showPage(3)" class="btn">
+            Continuar ❤️
+        </button>
 
-<!-- PREGUNTA -->
+    </div>
 
-<div class="pantalla" id="pregunta">
+</section>
 
-<img src="mayly.jpg.jpeg" class="foto">
+<!-- PAGINA 3 -->
 
-<h1>Mayly ❤️</h1>
+<section id="page3" class="page">
 
-<h2 id="textoPregunta">
-¿Quieres ser mi novia?
-</h2>
+    <img src="mayly.jpg.jpeg" class="photo">
 
-<div>
+    <h1>Mayly ❤️</h1>
 
-<button id="si">
-Sí ❤️
-</button>
+    <h2 id="question">
+        ¿Quieres ser mi novia?
+    </h2>
 
-<button id="no">
-No 😅
-</button>
+    <div class="buttons">
 
-</div>
+        <button id="yesBtn">
+            Sí ❤️
+        </button>
 
-</div>
+        <button id="noBtn">
+            No 😅
+        </button>
 
-<!-- FINAL -->
+    </div>
 
-<div class="pantalla" id="final">
+</section>
 
-<div class="final">
+<!-- PAGINA 4 -->
 
-❤️ ¡Sabía que dirías que sí! ❤️
+<section id="page4" class="page">
 
-<br><br>
+    <div class="success">
 
-Gracias por aceptar.
+        <h1>❤️ ¡Sabía que dirías que sí! ❤️</h1>
 
-<br>
+        <p>
 
-Me haces muy feliz.
+            Gracias por aceptar.
 
-<br><br>
+            <br><br>
 
-Con cariño,
+            Me haces muy feliz.
 
-<br>
+            <br><br>
 
-Frank ❤️
+            Ahora oficialmente eres mi novia ❤️
 
-</div>
+        </p>
 
-</div>
+        <h2>
+            Con cariño,
+            <br>
+            Frank ❤️
+        </h2>
 
-<script>
+    </div>
 
-function abrirCarta(){
+</section>
 
-document.getElementById("inicio").classList.remove("activa");
-document.getElementById("carta").classList.add("activa");
-
-}
-
-function mostrarPregunta(){
-
-document.getElementById("carta").classList.remove("activa");
-document.getElementById("pregunta").classList.add("activa");
-
-}
-
-const frases = [
-
-"No 😅",
-"¿Estás segura? 🥺",
-"Ayy mi corazoncito 💔",
-"¿Pero estás segura? ",
-"Piensa bien ❤️",
-"Batman estaría triste 🦇",
-"No me hagas esto 😔",
-"Piensalo muy bien",
-"Por favor ❤️",
-"El dios Bills no soportara"
-
-];
-
-let indice = 0;
-let intentos = 0;
-
-const botonNo = document.getElementById("no");
-
-botonNo.addEventListener("mouseover",()=>{
-
-const x = Math.random() * (window.innerWidth - 200);
-const y = Math.random() * (window.innerHeight - 100);
-
-botonNo.style.left = x + "px";
-botonNo.style.top = y + "px";
-
-indice++;
-
-if(indice >= frases.length){
-indice = 0;
-}
-
-botonNo.innerHTML = frases[indice];
-
-intentos++;
-
-if(intentos === 3){
-
-document.getElementById("textoPregunta").innerHTML =
-"Mayly, piénsalo bien ❤️";
-
-}
-
-if(intentos === 6){
-
-document.getElementById("textoPregunta").innerHTML =
-"Mi corazón está en tus manos 🥺";
-
-}
-
-if(intentos === 10){
-
-document.getElementById("textoPregunta").innerHTML =
-"Prometo hacerte feliz ❤️";
-
-}
-
-});
-
-document.getElementById("si").addEventListener("click",()=>{
-
-document.getElementById("pregunta").classList.remove("activa");
-document.getElementById("final").classList.add("activa");
-
-for(let i=0;i<150;i++){
-
-setTimeout(()=>{
-
-let c = document.createElement("div");
-
-c.classList.add("corazon");
-
-c.innerHTML = Math.random()>0.5 ? "❤️" : "💖";
-
-c.style.left = Math.random()*100 + "vw";
-
-c.style.animationDuration =
-(Math.random()*3+3)+"s";
-
-document.body.appendChild(c);
-
-setTimeout(()=>{
-c.remove();
-},6000);
-
-},i*40);
-
-}
-
-});
-
-function corazones(){
-
-let c = document.createElement("div");
-
-c.classList.add("corazon");
-
-c.innerHTML = "❤️";
-
-c.style.left = Math.random()*100 + "vw";
-
-c.style.animationDuration =
-(Math.random()*3+4)+"s";
-
-document.body.appendChild(c);
-
-setTimeout(()=>{
-c.remove();
-},7000);
-
-}
-
-setInterval(corazones,500);
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
